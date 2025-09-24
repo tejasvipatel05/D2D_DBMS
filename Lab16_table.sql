@@ -15,3 +15,20 @@ CREATE TABLE EmployeeLogs (
     ActionPerformed VARCHAR(100) NOT NULL,
     ActionDate DATETIME NOT NULL DEFAULT GETDATE()
 );
+
+CREATE TABLE Movies (
+    MovieID INT PRIMARY KEY,
+    MovieTitle VARCHAR(255) NOT NULL,
+    ReleaseYear INT NOT NULL,
+    Genre VARCHAR(100) NOT NULL,
+    Rating DECIMAL(3,1) NOT NULL,
+    Duration INT NOT NULL
+);
+
+CREATE TABLE MoviesLog (
+    LogID INT PRIMARY KEY IDENTITY(1,1),
+    MovieID INT NOT NULL,
+    MovieTitle VARCHAR(255) NOT NULL,
+    ActionPerformed VARCHAR(100) NOT NULL,
+    ActionDate DATETIME NOT NULL DEFAULT GETDATE()
+);
